@@ -28,15 +28,17 @@ dependencies {
 
 	implementation group: 'com.fasterxml.jackson.dataformat', name: 'jackson-dataformat-xml', version: '2.9.7'
 
+	implementation 'com.h2database:h2'
 
-	runtimeOnly 'mysql:mysql-connector-java'
+	implementation group: 'org.postgresql', name: 'postgresql', version: '42.1.0'
 
 	implementation group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	implementation group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
 	implementation group: 'io.springfox', name: 'springfox-bean-validators', version: '2.9.2'
 
-	implementation group: 'org.hibernate', name: 'hibernate-envers', version: '5.4.17.Final'
-	implementation group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.5.Final'
+	implementation group: 'org.hibernate', name: 'hibernate-envers'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-validation'
+
 }
 
 test {

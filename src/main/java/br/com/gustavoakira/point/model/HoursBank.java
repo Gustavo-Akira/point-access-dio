@@ -8,7 +8,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
-import javax.persistence.ManyToOne;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -18,26 +17,22 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Builder
 @Entity
-public class Movimentation {
+public class HoursBank {
 
     @Data
     @AllArgsConstructor
     @NoArgsConstructor
     @Embeddable
-    class MovimentationId implements Serializable {
-        private Long idMovimento;
+    class HoursBankId implements Serializable{
+        private Long idHourBank;
+        private Long idMovimentation;
         private Long idUser;
     }
 
     @EmbeddedId
-    private MovimentationId id;
+    private HoursBankId id;
 
-    private LocalDateTime entryDate;
-    private LocalDateTime exitDate;
-
-    private BigDecimal period;
-    @ManyToOne
-    private Occurrence occurrence;
-    @ManyToOne
-    private Calendar calendar;
+    private LocalDateTime workedDate;
+    private BigDecimal hourQuantity;
+    private  BigDecimal hourBalance;
 }
