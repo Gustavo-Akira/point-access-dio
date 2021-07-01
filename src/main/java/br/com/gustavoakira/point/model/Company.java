@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
 import org.hibernate.validator.constraints.br.CNPJ;
 
 import javax.persistence.Entity;
@@ -14,6 +15,7 @@ import javax.persistence.Id;
 @NoArgsConstructor
 @Builder
 @Entity
+@Audited
 public class Company {
     @Id
     private Long id;

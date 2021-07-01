@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.envers.Audited;
 
 
 import javax.persistence.Entity;
@@ -19,6 +20,7 @@ import java.time.LocalDateTime;
 @Builder
 @Entity
 @Table(name = "tb_user")
+@Audited
 public class User {
     @Id
     private Long id;
